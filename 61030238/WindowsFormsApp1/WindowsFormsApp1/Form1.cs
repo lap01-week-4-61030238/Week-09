@@ -27,7 +27,12 @@ namespace WindowsFormsApp1
             Graphics g = e.Graphics;
             Pen bluepen = new Pen(Color.Blue, 2);
             g.DrawRectangle(bluepen, 10, 10, 100, 100);
-            bluepen.Dispose(); 
+            bluepen.Dispose();
+
+            Pen somepen = new Pen(Color.FromArgb(255, 120, 200));
+            g.DrawEllipse(somepen, 20, 20, 200, 200);
+            somepen.Dispose();
+
 
         }
     }
