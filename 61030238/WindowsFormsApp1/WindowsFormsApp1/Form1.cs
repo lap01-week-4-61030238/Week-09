@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            Graphics g = e.Graphics; Image image = Image.FromFile("D:\\Capture.PNG");
+            Graphics g = e.Graphics; Image image = Image.FromFile("Pictures:\\Capture.PNG");
             // Change "d: Capture.PNG" to match your image path and name. 
             TextureBrush brush = new TextureBrush(image);
             Rectangle rect = new Rectangle(10, 10, 180, 150);
