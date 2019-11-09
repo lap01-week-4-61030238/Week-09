@@ -24,13 +24,24 @@ namespace WindowsFormsApp1
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            Graphics g = e.Graphics; Image image = Image.FromFile("D:\\Capture.PNG");
-            // Change "d: Capture.PNG" to match your image path and name. 
-            TextureBrush brush = new TextureBrush(image);
-            Rectangle rect = new Rectangle(10, 10, 180, 150);
-            g. FillEllipse(brush, rect);
+            Graphics g = e.Graphics;
             g.Dispose();
+        }
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            LinearGradientBrush pnlGdt = new LinearGradientBrush(panel1.ClientRectangle,
+                Color.Yellow, Color.Navy, 0f, true);
+            e.Graphics.FillRectangle(pnlGdt, panel1.ClientRectangle);
+            pnlGdt.Dispose();
+        }
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            LinearGradientBrush pn1Gdt = new LinearGradientBrush(panel2.ClientRectangle,
+            Color.Yellow, Color.Navy, 90f, true);
+            e.Graphics.FillRectangle(pn1Gdt, pane12.ClientRectangle);
+            pn1Gdt.Dispose();
 
+        }
 
 
 
@@ -41,4 +52,4 @@ namespace WindowsFormsApp1
 
         }
     }
-}
+
