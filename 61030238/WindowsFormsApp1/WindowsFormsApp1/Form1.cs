@@ -35,7 +35,9 @@ namespace WindowsFormsApp1
         {
             Graphics g = e.Graphics;
             Pen bluepen = new Pen(Color.Brown, 2);
-            g.DrawRectangle(bluepen, 95, 200, 20, 30);
+            g.DrawRectangle(bluepen, 95, 200, 20, 40);
+            g.FillClosedCurve(Brushes.Lime, pn);
+
             bluepen.Dispose();
 
 
@@ -56,6 +58,8 @@ namespace WindowsFormsApp1
             pnt[2].X = 50;
             pnt[2].Y = 200;
 
+            g.FillClosedCurve(Brushes.Lime, pnt);
+            g.DrawClosedCurve(Pens.Red, pnt);
             gr_graphics.DrawPolygon(pen_draw, pnt);
 
 
