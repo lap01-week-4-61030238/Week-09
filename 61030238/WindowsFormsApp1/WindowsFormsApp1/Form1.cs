@@ -34,11 +34,37 @@ namespace WindowsFormsApp1
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            Pen bluepen = new Pen(Color.Brown, 2); 
+            Pen bluepen= new Pen(Color.Brown, 2);
+            
             g.DrawRectangle(bluepen, 95, 200, 20, 40);
             
 
             bluepen.Dispose();
+
+           
+            Pen bluepenn = new Pen(Color.Blue, 2);
+            g.DrawRectangle(bluepenn, 200, 200, 20, 40);
+
+
+
+
+            bluepen.Dispose();
+
+            Pen bluepennn = new Pen(Color.Blue, 2);
+            g.DrawRectangle(bluepennn, 290, 200, 20, 40);
+
+
+
+
+            bluepen.Dispose();
+            Pen bluepennnn = new Pen(Color.Blue, 2);
+            g.DrawRectangle(bluepennnn, 200, 100, 103, 20);
+
+
+
+
+            bluepen.Dispose();
+
 
 
 
