@@ -30,10 +30,14 @@ namespace WindowsFormsApp1
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            LinearGradientBrush pnlGdt = new LinearGradientBrush(panel1.ClientRectangle,
-               Color.Yellow, Color.Navy, 0f, true);
-            e.Graphics.FillRectangle(pnlGdt, panel1.ClientRectangle);
-            pnlGdt.Dispose();
+            Graphics g = e.Graphics;
+            Bitmap bmp = new Bitmap("C:\\Capture.PNG");
+            Rectangle destrect = new Rectangle(10, 10, bmp.Width / 2, bmp.Height / 2);
+            Rectangle srcrect = new Rectangle(0, 0, bmp.Width, bmp.Height);
+            this.SetClientSizeCore(destrect.Width + 20, destrect.Height + 20);
+            g.DrawImage(bmp, destrect, srcrect, GraphicsUnit.Pixel);
+            g.Dispose();
+
         }
     }
     }
