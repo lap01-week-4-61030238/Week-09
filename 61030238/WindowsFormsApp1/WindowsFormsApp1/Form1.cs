@@ -41,10 +41,10 @@ namespace WindowsFormsApp1
 
 
             gr_graphics = e.Graphics;
-
+            Pen somepen = new Pen(Color.Brown, 2);
             //Draw a triangle on the form.
             //first have to define an array of points.
-            
+
             Point[] pnt = new Point[3];
 
             pnt[0].X = 110;
