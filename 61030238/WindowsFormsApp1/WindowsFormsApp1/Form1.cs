@@ -12,6 +12,9 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        Graphics gr_graphics = default(Graphics);
+        //need a pen for drawing and make it black
+        Pen pen_draw = new Pen(Color.Black);
         public Form1()
         {
             InitializeComponent();
@@ -30,17 +33,30 @@ namespace WindowsFormsApp1
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            Graphics g = e.Graphics; Bitmap bmp = new Bitmap("C:\\Capture.PNG");
-            this.SetClientSizeCore(bmp.Width, bmp.Height);
-            Rectangle destRect = new Rectangle(0, 0, bmp.Width, bmp.Height);
-            Brush myBrush = new SolidBrush(Color.Coral); g.DrawImage(bmp, destRect);
-            g.DrawString("Hello World",// String 
-          
-            new Font("Verdana", 30, FontStyle.Bold), // Font, size, style 
-            myBrush,
+            Graphics g = e.Graphics;
+            Pen bluepen = new Pen(Color.Brown, 2);
+            g.DrawRectangle(bluepen, 95, 200, 20, 30);
+            bluepen.Dispose();
 
-             0, // x position to display font            
-             0);   // y position to display font g.Dispose();
+
+
+            gr_graphics = e.Graphics;
+            //Draw a triangle on the form.
+            //first have to define an array of points.
+            
+            Point[] pnt = new Point[3];
+
+            pnt[0].X = 110;
+            pnt[0].Y = 100;
+
+            pnt[1].X = 150;
+            pnt[1].Y = 200;
+
+            pnt[2].X = 50;
+            pnt[2].Y = 200;
+
+            gr_graphics.DrawPolygon(pen_draw, pnt);
+
 
 
 
