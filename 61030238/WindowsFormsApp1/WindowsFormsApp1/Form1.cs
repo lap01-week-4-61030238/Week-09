@@ -34,9 +34,9 @@ namespace WindowsFormsApp1
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            Pen bluepen = new Pen(Color.Brown, 2);
+            Pen bluepen = new Pen(Color.Brown, 2); g.FillEllipse
             g.DrawRectangle(bluepen, 95, 200, 20, 40);
-            g.FillClosedCurve(Brushes.Lime, pn);
+            
 
             bluepen.Dispose();
 
