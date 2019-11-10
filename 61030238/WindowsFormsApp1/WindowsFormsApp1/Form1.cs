@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            Pen bluepen = new Pen(Color.Brown, 2); g.FillEllipse
+            Pen bluepen = new Pen(Color.Brown, 2); 
             g.DrawRectangle(bluepen, 95, 200, 20, 40);
             
 
@@ -57,6 +57,35 @@ namespace WindowsFormsApp1
 
             pnt[2].X = 50;
             pnt[2].Y = 200;
+
+            g.FillClosedCurve(Brushes.Lime, pnt);
+            g.DrawClosedCurve(Pens.Red, pnt);
+            gr_graphics.DrawPolygon(pen_draw, pnt);
+
+
+            Pen bluepent = new Pen(Color.Brown, 2);
+            g.DrawRectangle(bluepent, 450, 200, 20, 40);
+
+
+            bluepen.Dispose();
+
+
+
+            gr_graphics = e.Graphics;
+            Pen somepent = new Pen(Color.Brown, 2);
+            //Draw a triangle on the form.
+            //first have to define an array of points.
+
+            Point[] pntt = new Point[3];
+
+            pntt[0].X = 110;
+            pntt[0].Y = 100;
+
+            pntt[1].X = 150;
+            pnt[1].Y = 200;
+
+            pntt[2].X = 50;
+            pntt[2].Y = 200;
 
             g.FillClosedCurve(Brushes.Lime, pnt);
             g.DrawClosedCurve(Pens.Red, pnt);
