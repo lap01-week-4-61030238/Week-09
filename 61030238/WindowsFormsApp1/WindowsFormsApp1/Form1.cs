@@ -41,6 +41,7 @@ namespace WindowsFormsApp1
 
 
             gr_graphics = e.Graphics;
+
             //Draw a triangle on the form.
             //first have to define an array of points.
             
