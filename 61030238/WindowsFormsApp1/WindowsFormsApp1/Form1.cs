@@ -122,6 +122,8 @@ namespace WindowsFormsApp1
             g.Dispose();
 
 
+            Color col = Color.FromName("LightGreen");
+            this.BackColor = col;
 
 
 
