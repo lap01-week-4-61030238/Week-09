@@ -89,6 +89,12 @@ namespace WindowsFormsApp1
             g.DrawClosedCurve(Pens.Red, pntt);
             gr_graphics.DrawPolygon(pen_draw, pntt);
 
+            
+            Rectangle rect2 = new Rectangle(210, 60, 80, 80); g.FillEllipse(Brushes.Firebrick, rect2);
+            // Fill ellipse
+            Rectangle rect3 = new Rectangle(200, 140, 100, 100); g.FillEllipse(Brushes.Firebrick, rect3);
+            g.Dispose();
+
 
 
 
