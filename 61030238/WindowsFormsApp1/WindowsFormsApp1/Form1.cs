@@ -30,13 +30,18 @@ namespace WindowsFormsApp1
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            Graphics g = e.Graphics;
-            Bitmap bmp = new Bitmap("C:\\Capture.PNG");
-            Rectangle destrect = new Rectangle(10, 10, bmp.Width / 2, bmp.Height / 2);
-            Rectangle srcrect = new Rectangle(0, 0, bmp.Width, bmp.Height);
-            this.SetClientSizeCore(destrect.Width + 20, destrect.Height + 20);
-            g.DrawImage(bmp, destrect, srcrect, GraphicsUnit.Pixel);
+            Graphics g = e.Graphics; Bitmap bmp = new Bitmap("C:\\Capture.PNG");
+            this.SetClientSizeCore(bmp.Width, bmp.Height);
+            Rectangle topLeft = new Rectangle(0, 0, bmp.Width / 2, bmp.Height / 2);
+            Rectangle topRight = new Rectangle(bmp.Width / 2, 0, bmp.Width / 2, bmp.Height / 2);
+            Rectangle bottomLeft = new Rectangle(0, bmp.Height / 2, bmp.Width / 2, bmp.Height / 2);
+            Rectangle bottomRight = new Rectangle(bmp.Width / 2, bmp.Height / 2, bmp.Width / 2, bmp.Height / 2);
+            bmp.RotateFlip(RotateFlipType.RotateNoneFlipNone); e.Graphics.DrawImage(bmp, topLeft);
+            bmp.RotateFlip(RotateFlipType.RotateNoneFlipX); e.Graphics.DrawImage(bmp, topRight);
+            bmp.RotateFlip(RotateFlipType.Rotate180FlipNone); e.Graphics.DrawImage(bmp, bottomLeft);
+            bmp.RotateFlip(RotateFlipType.Rotate180FlipY); e.Graphics.DrawImage(bmp, bottomRight);
             g.Dispose();
+
 
         }
     }
